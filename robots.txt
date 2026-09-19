@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# Set your real siteUrl and rebuild to add a Sitemap directive.

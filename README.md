@@ -1,0 +1,1 @@
+Replace interface studies with verified project screenshots. Use WebP/AVIF, explicit width and height, responsive srcset, and lazy loading below the fold. Keep the visible study labels until real screenshots are supplied.

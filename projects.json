@@ -1,0 +1,70 @@
+[
+  {
+    "id": "cliniaro",
+    "name": "Cliniaro",
+    "subtitle": "A clearer day at the clinic.",
+    "category": "Healthcare / SaaS",
+    "description": "A clinic management product connecting patient records, appointments, prescriptions and everyday operations.",
+    "modules": [
+      "Appointments",
+      "Patient records",
+      "Prescriptions",
+      "Billing"
+    ],
+    "color": "mint",
+    "problem": "Clinic work crosses many separate touchpoints: scheduling, patient information, prescriptions and billing. The product direction is to bring those workflows into one coherent workspace.",
+    "solution": "A shared clinic workspace, organized around the patient journey. The interface study below explores how a daily schedule and patient context could sit together.",
+    "next": "Validate the complete appointment-to-prescription workflow with real clinic users."
+  },
+  {
+    "id": "whatscrm",
+    "name": "WhatsCRM",
+    "subtitle": "Conversations with somewhere to go.",
+    "category": "Messaging / CRM",
+    "description": "A WhatsApp-focused CRM concept for keeping conversations, contacts and lead pipelines connected.",
+    "modules": [
+      "Conversations",
+      "Contacts",
+      "Pipeline",
+      "Team workflows"
+    ],
+    "color": "lavender",
+    "problem": "A useful sales conversation can lose its context when contacts, follow-ups and pipeline stages live in different places.",
+    "solution": "A connected view of conversations and leads, with a visual pipeline for understanding the next action. This interface study uses illustrative data.",
+    "next": "Clarify integration constraints and test how a conversation becomes an actionable lead."
+  },
+  {
+    "id": "wfh-connect",
+    "name": "WFH Connect",
+    "subtitle": "A better starting point for remote work.",
+    "category": "Opportunities / Platform",
+    "description": "A platform direction for work-from-home opportunities, training, registration and candidate management.",
+    "modules": [
+      "Opportunities",
+      "Registration",
+      "Training",
+      "Candidates"
+    ],
+    "color": "sand",
+    "problem": "Candidates need a clear path from discovering an opportunity to understanding its requirements and registering their interest.",
+    "solution": "An opportunity-first experience connecting discovery, training and candidate registration. The scope and implementation details still need to be documented.",
+    "next": "Validate opportunity information and simplify the candidate registration journey."
+  },
+  {
+    "id": "webdivi",
+    "name": "Webdivi",
+    "subtitle": "Small business. Considered presence.",
+    "category": "Business / Web solutions",
+    "description": "A digital presence concept bringing websites, CRM, SEO and analytics together for small businesses.",
+    "modules": [
+      "Websites",
+      "CRM",
+      "SEO",
+      "Analytics"
+    ],
+    "color": "blue",
+    "problem": "A small business needs its online presence to support real operations, from being found to responding to a new inquiry.",
+    "solution": "A connected web solution concept that treats the website, lead workflow and measurement as parts of the same system.",
+    "next": "Define an initial service scope and validate it with a small-business workflow."
+  }
+]
