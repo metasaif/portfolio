@@ -1,5 +1,17 @@
 # Your portfolio: edit, commit, publish
 
+## Project inquiries and private dashboard
+
+The repository now includes a Cloudflare Workers + D1 backend. Start with [BACKEND-SETUP.md](BACKEND-SETUP.md) to activate it after creating your Cloudflare account. The inquiry form remains disabled until connected, and the existing email and WhatsApp links keep working.
+
+- Visitor form: the contact section of `index.html`.
+- Owner dashboard: [admin.html](admin.html), protected by a private access key on every data request.
+- Two public settings: `assets/js/backend-config.js` (Worker URL and Turnstile site key).
+- Backend source, database migration and tests: `backend/`.
+- Store secrets only in Cloudflare, never in GitHub. No email notifications are included; read inquiries in the dashboard.
+
+Normal portfolio text still uses direct HTML editing, with no build step. The separate backend needs a one-time deployment to Cloudflare.
+
 This version has no build step. Edit the HTML directly. You do not need Node, JSON configuration, Git commands or a terminal.
 
 ## Which file do I edit?

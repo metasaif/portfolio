@@ -24,6 +24,8 @@
 <link rel="canonical" href="https://metasaif.github.io/portfolio/">
 <meta property="og:url" content="https://metasaif.github.io/portfolio/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Mohammad Saif Khan — Digital Workbench","url":"https://metasaif.github.io/portfolio/"}</script>
+<link rel="stylesheet" href="assets/css/inquiries.css">
+<script type="module" src="assets/js/inquiry.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -409,6 +411,25 @@
 </div>
 </div>
 <p class="content-note">LinkedIn details are awaiting configuration.</p>
+<!-- PROJECT INQUIRIES: public settings are in assets/js/backend-config.js. Secrets belong only in Cloudflare. -->
+<div class="inquiry-panel">
+  <div><span class="eyebrow">START A CONVERSATION</span><h3>What are you<br>working on?</h3><p>Share the problem you want to solve, who it is for, and what a useful first version would look like.</p><p class="privacy-note">Your name, email and project brief are stored privately to respond to your inquiry. Please do not include passwords, patient information or other sensitive data. When enabled, the form uses Cloudflare for storage and spam protection. <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy policy</a>. For deletion requests, email <a href="mailto:Dev@webdivi.com">Dev@webdivi.com</a>.</p></div>
+  <form id="inquiry-form">
+    <fieldset disabled aria-describedby="inquiry-status">
+      <legend class="skip">Your project inquiry</legend>
+      <label>Your name *<input name="name" autocomplete="name" minlength="2" maxlength="100" required></label>
+      <label>Email address *<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+      <label class="full-width">Budget range (optional)<select name="budget"><option>Not sure yet</option><option>Under ₹25,000</option><option>₹25,000–₹75,000</option><option>₹75,000–₹2,00,000</option><option>Over ₹2,00,000</option></select></label>
+      <label class="full-width">Tell me about the project *<textarea name="message" minlength="20" maxlength="4000" required></textarea></label>
+      <label class="spam-trap" aria-hidden="true">Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
+      <label class="consent full-width"><input type="checkbox" name="consent" required><span>I agree to my details being stored and used to reply to this inquiry. *</span></label>
+      <div id="inquiry-verification" class="full-width"></div>
+      <button type="submit" class="full-width" disabled>Send project inquiry ↗</button>
+    </fieldset>
+    <p id="inquiry-status" class="form-status" role="status" aria-live="polite">The inquiry form is being connected. Please use email or WhatsApp above for now.</p>
+    <noscript><p>Please use the email link above; the inquiry form requires JavaScript.</p></noscript>
+  </form>
+</div>
 </section>
 </main>
 <footer>

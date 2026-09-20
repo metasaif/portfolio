@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https:; img-src 'self' data:; base-uri 'self'; form-action 'none'; object-src 'none'">
+  <title>Private inquiry desk — Mohammad Saif Khan</title>
+  <link rel="icon" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/inquiries.css">
+  <script type="module" src="assets/js/admin.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main" tabindex="-1" class="admin-page">
+  <header class="admin-top"><a class="wordmark" href="index.html">msk<span>✳</span></a><span class="eyebrow">PRIVATE INQUIRY DESK</span><a href="index.html" class="admin-link">Back to portfolio</a></header>
+  <h1>The next <em>build.</em></h1>
+  <p>Review project inquiries and keep track of the next conversation.</p>
+  <p id="admin-status" class="admin-notice" role="status" aria-live="polite">Checking backend configuration…</p>
+  <form id="admin-login" class="admin-login">
+    <label for="access-key">Private access key</label>
+    <input id="access-key" type="password" minlength="32" maxlength="256" autocomplete="off" required disabled aria-describedby="key-help">
+    <p id="key-help" class="content-note">Use the access key you saved in Cloudflare. It stays in this tab’s memory and is cleared when you sign out, refresh, or after 15 minutes without an admin action.</p>
+    <button class="admin-button" type="submit" disabled>Open inquiry desk</button>
+  </form>
+  <section id="admin-desk" hidden aria-label="Inquiries">
+    <div class="admin-toolbar">
+      <label for="status-filter">Show</label>
+      <select class="admin-filter" id="status-filter"><option value="">All inquiries</option><option value="new">New</option><option value="contacted">Contacted</option><option value="completed">Completed</option></select>
+      <button class="admin-button secondary" id="refresh" type="button">Refresh</button>
+      <button class="admin-button secondary" id="logout" type="button">Sign out</button>
+    </div>
+    <p class="content-note">Newest first. Reply links open your email app; this dashboard does not send emails.</p>
+    <div id="inquiry-list"></div>
+    <button class="admin-button" id="load-more" type="button" hidden>Load more inquiries</button>
+  </section>
+  <noscript><p class="admin-notice">JavaScript is required for the private dashboard. No inquiry data is embedded in this page.</p></noscript>
+</main>
+</body>
+</html>
