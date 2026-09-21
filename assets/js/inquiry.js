@@ -1,4 +1,4 @@
-import {API_BASE, TURNSTILE_SITE_KEY} from './backend-config.js';
+import {API_BASE, TURNSTILE_SITE_KEY} from './backend-config.js?v=20260921-domain2';
 const form=document.querySelector('#inquiry-form');
 const status=document.querySelector('#inquiry-status');
 const fields=form.querySelector('fieldset');

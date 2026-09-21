@@ -2,7 +2,7 @@
 
 ## Current deployment
 
-The backend has been created in your Cloudflare account. API: `https://saif-portfolio-api.metasaif-portfolio.workers.dev`. The database, rate limits, Turnstile widget and private Worker secrets are configured. The public frontend settings are filled in. You do not need to repeat the setup below; it is retained for recovery or deploying another copy.
+The backend has been created in your Cloudflare account. API: `https://saif-portfolio-api.mohammadsaifkhan.workers.dev`. The database, rate limits, Turnstile widget and private Worker secrets are configured. The public frontend settings are filled in. You do not need to repeat the setup below; it is retained for recovery or deploying another copy.
 
 Your private dashboard access key was saved locally as `portfolio-private-admin-access.txt` outside the site folder and was not committed to GitHub. Store it in your password manager. Open `https://metasaif.github.io/portfolio/admin.html` to sign in.
 

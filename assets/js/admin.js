@@ -1,4 +1,4 @@
-import {API_BASE} from './backend-config.js';
+import {API_BASE} from './backend-config.js?v=20260921-domain2';
 const api=API_BASE.replace(/\/$/,'');
 const login=document.querySelector('#admin-login'),keyInput=document.querySelector('#access-key'),desk=document.querySelector('#admin-desk'),status=document.querySelector('#admin-status'),list=document.querySelector('#inquiry-list'),filter=document.querySelector('#status-filter'),more=document.querySelector('#load-more');
 let key='',cursor=null,timer,epoch=0,loading=false;const pending=new Set();
