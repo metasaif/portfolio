@@ -2,7 +2,7 @@
 
 ## Project inquiries and private dashboard
 
-The repository now includes a Cloudflare Workers + D1 backend. Start with [BACKEND-SETUP.md](BACKEND-SETUP.md) to activate it after creating your Cloudflare account. The inquiry form remains disabled until connected, and the existing email and WhatsApp links keep working.
+The repository includes a deployed Cloudflare Workers + D1 backend. The contact form is connected to it. Open [admin.html](admin.html) and enter your private access key to review inquiries. See [BACKEND-SETUP.md](BACKEND-SETUP.md) for recovery and maintenance instructions. Email and WhatsApp links remain available if the service is unavailable.
 
 - Visitor form: the contact section of `index.html`.
 - Owner dashboard: [admin.html](admin.html), protected by a private access key on every data request.

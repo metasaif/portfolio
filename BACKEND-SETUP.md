@@ -1,6 +1,12 @@
 # Activate your project inquiry form and private dashboard
 
-The frontend is ready for GitHub Pages. The backend code is in `backend/`. GitHub Pages does not run that backend; deploy it once to your own Cloudflare account. Until then, the form is disabled and visitors can use your existing email and WhatsApp links.
+## Current deployment
+
+The backend has been created in your Cloudflare account. API: `https://saif-portfolio-api.metasaif-portfolio.workers.dev`. The database, rate limits, Turnstile widget and private Worker secrets are configured. The public frontend settings are filled in. You do not need to repeat the setup below; it is retained for recovery or deploying another copy.
+
+Your private dashboard access key was saved locally as `portfolio-private-admin-access.txt` outside the site folder and was not committed to GitHub. Store it in your password manager. Open `https://metasaif.github.io/portfolio/admin.html` to sign in.
+
+The frontend runs on GitHub Pages and the backend code in `backend/` runs on Cloudflare. If the backend is unavailable, visitors can use your existing email and WhatsApp links.
 
 ## What you get
 

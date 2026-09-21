@@ -11,7 +11,7 @@
   "d1_databases": [{
     "binding": "DB",
     "database_name": "saif-portfolio-inquiries",
-    "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+    "database_id": "07c933dd-c441-4173-bc9b-4d1e60829ee2",
     "migrations_dir": "migrations"
   }],
   "ratelimits": [
