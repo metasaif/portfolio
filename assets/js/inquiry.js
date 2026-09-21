@@ -13,12 +13,15 @@ async function initialize(){
  if(!configured)return;
  try{
   message('Checking availability…');const health=await request(api+'/api/health');if(!health.ready)throw Error();
-  await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.onload=resolve;script.onerror=reject;document.head.append(script);});
-  window.turnstile.ready(()=>{
+  await new Promise((resolve,reject)=>{
+   const timeout=setTimeout(()=>reject(Error('Verification took too long to load. Please reload or use email.')),20000);
+   window.onInquiryVerificationReady=()=>{clearTimeout(timeout);resolve();};
+   const script=document.createElement('script');script.async=true;script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onInquiryVerificationReady';
+   script.onerror=()=>{clearTimeout(timeout);reject(Error('Verification could not load. Please reload or use email.'));};document.head.append(script);
+  });
    widget=window.turnstile.render('#inquiry-verification',{sitekey:TURNSTILE_SITE_KEY,action:'inquiry',theme:'light',size:'flexible',callback:value=>{token=value;button.disabled=false;},'expired-callback':resetChallenge,'error-callback':()=>{token='';button.disabled=true;message('Verification could not load. Please use email or reload.');}});
    fields.disabled=false;message('Tell me about your project. All fields marked * are required.');
-  });
- }catch{message('The inquiry form is unavailable. Please use the email or WhatsApp link above.');}
+ }catch(error){console.error('Inquiry initialization failed:',error);message(error.message||'The inquiry form is unavailable. Please use the email or WhatsApp link above.');}
 }
 form.addEventListener('submit',async event=>{
  event.preventDefault();if(!configured||!token||!form.reportValidity())return;
