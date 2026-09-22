@@ -1,0 +1,28 @@
+/* Signature navigation — a floating identity bar with a distinct navigation dock. */
+.site-header{position:sticky;top:16px;z-index:40;margin:16px clamp(16px,3vw,56px) 24px;padding:16px 22px;height:90px;gap:24px;border:1px solid #ffffffd9;border-radius:28px;background:#f8f9fff2;box-shadow:0 16px 40px #061c7130,inset 0 1px 0 #fff;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+body:has(.hero) .site-header{margin-bottom:-106px}
+body:has(.hero) .hero{padding-top:154px}
+.signature-brand{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none}
+.signature-mark{position:relative;display:grid;place-items:center;background:#1649ef;color:#fff;width:65px;height:56px;border-radius:18px 18px 7px 18px;font-size:32px;font-weight:850;letter-spacing:-3px;box-shadow:0 6px 12px #1649ef22;padding-right:3px}
+.signature-mark i{position:absolute;top:-7px;right:-7px;display:grid;place-items:center;width:24px;height:24px;border:3px solid #f8f9ff;border-radius:50%;font-size:18px;font-style:normal;font-weight:400;letter-spacing:0;background:#deff80;color:#192045;transition:transform .45s}
+.signature-brand:hover .signature-mark i{transform:rotate(90deg)}
+.signature-name{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:750;line-height:1.25;letter-spacing:-.025em;color:#192045}
+.signature-name small{display:flex;align-items:center;gap:6px;font:9px 'Courier New',monospace;letter-spacing:.08em;text-transform:uppercase;color:#5b6682}
+.signature-name small::before{content:'';width:5px;height:5px;background:#3c895c;border-radius:50%;box-shadow:0 0 0 3px #3c895c12}
+.site-header nav{display:flex;align-items:center;gap:3px;padding:5px;border-radius:999px;background:#1b2348;box-shadow:inset 0 1px 0 #ffffff18}
+.site-header nav a{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 17px;min-height:44px;border-radius:999px;color:#e8edff;font-size:13px;font-weight:500;transition:background .2s,color .2s,transform .2s}
+.site-header nav a::after{display:none}
+.site-header nav a .nav-number{font:9px 'Courier New',monospace;color:#9ba8d0}
+.site-header nav a:hover{background:#343e65;color:#fff}
+.site-header nav a[aria-current]{background:#deff80;color:#192045;box-shadow:0 2px 5px #07113033}
+.site-header nav a[aria-current] .nav-number{color:#4c612c}
+.site-header .nav-contact{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0;padding:7px 7px 7px 20px;min-height:52px;background:#deff80;color:#192045;border:1px solid #c7e780;border-radius:999px;box-shadow:0 5px 12px #56752112;font-size:13px;font-weight:750;white-space:nowrap}
+.site-header .nav-contact span{margin:0;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#192045;color:#deff80;font-size:20px;transition:transform .2s}
+.site-header .nav-contact:hover{background:#d3f774;box-shadow:0 8px 18px #56752120;transform:translateY(-1px)}
+.site-header .nav-contact:hover span{transform:rotate(45deg)}
+.site-header :focus-visible{outline:3px solid #1649ef;outline-offset:4px}
+@media(min-width:1500px){.site-header{max-width:1680px;margin-left:auto;margin-right:auto;padding-left:26px;padding-right:18px}.signature-name{font-size:15px}.site-header nav a{padding:13px 22px;font-size:14px}}
+@media(max-width:1100px){.signature-name{display:none}.site-header{gap:16px}.site-header nav a{padding:12px 15px}}
+@media(max-width:700px){.site-header{top:10px;margin:10px 12px 20px;height:auto;padding:12px;border-radius:24px;display:grid;grid-template-columns:1fr auto;gap:12px}.signature-brand{gap:11px}.signature-name{display:flex;font-size:11px}.signature-name small{font-size:8px;letter-spacing:.035em}.signature-mark{width:52px;height:46px;font-size:27px;border-radius:14px 14px 5px 14px}.signature-mark i{width:21px;height:21px;font-size:15px;right:-5px;top:-5px}.site-header nav{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;border-radius:18px}.site-header nav a{min-height:42px;padding:10px 7px;border-radius:14px;font-size:12px;gap:5px}.site-header .nav-contact{font-size:12px;gap:10px;min-height:44px;padding:5px 5px 5px 14px}.site-header .nav-contact span{width:32px;height:32px;font-size:18px}body:has(.hero) .site-header{margin-bottom:-144px}body:has(.hero) .hero{padding-top:185px}html{scroll-padding-top:170px}}
+@media(max-width:380px){.signature-name{font-size:10px}.signature-name small{font-size:7px}.site-header .nav-contact{gap:7px;padding-left:11px}.site-header nav a .nav-number{display:none}.site-header{margin-left:8px;margin-right:8px;padding:10px}}
+@media(prefers-reduced-motion:reduce){.signature-mark i,.site-header nav a,.site-header .nav-contact,.site-header .nav-contact span{transition:none;transform:none!important}}
