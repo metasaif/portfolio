@@ -26,6 +26,7 @@ function text(value, label, min, max) {
   const clean = value.trim(); if (clean.length < min || clean.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(clean)) fail(400, `Check ${label}.`);
   return clean;
 }
+const allowed = (value, item) => !!item && String(value || '').split(',').map(s => s.trim()).includes(item);
 function ready(env) { return env.DB && env.INQUIRY_LIMITER && env.ADMIN_LIMITER && env.TURNSTILE_SECRET_KEY && env.ADMIN_TOKEN?.length >= 32 && env.ALLOWED_ORIGIN && env.TURNSTILE_HOSTNAME; }
 async function limit(binding, request) {
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
@@ -38,7 +39,7 @@ async function authorize(request, env) {
 }
 export async function route(request, env, fetcher = fetch) {
   const url = new URL(request.url); const origin = request.headers.get('origin');
-  if (origin && origin !== env.ALLOWED_ORIGIN) fail(403, 'Origin not allowed.');
+  if (origin && !allowed(env.ALLOWED_ORIGIN, origin)) fail(403, 'Origin not allowed.');
   if (request.method === 'OPTIONS') return {status: 204};
   if (!ready(env)) fail(503, 'Inquiries are not available yet. Please use email.');
   if (url.pathname === '/api/health' && request.method === 'GET') {
@@ -46,7 +47,7 @@ export async function route(request, env, fetcher = fetch) {
     return {data: {ready: true}};
   }
   if (url.pathname === '/api/inquiries' && request.method === 'POST') {
-    if (origin !== env.ALLOWED_ORIGIN) fail(403, 'Origin not allowed.');
+    if (!allowed(env.ALLOWED_ORIGIN, origin)) fail(403, 'Origin not allowed.');
     await limit(env.INQUIRY_LIMITER, request);
     const data = await body(request);
     if (data.website) fail(400, 'Submission could not be accepted.');
@@ -70,7 +71,7 @@ export async function route(request, env, fetcher = fetch) {
       if (!result.ok) fail(503, 'Verification is unavailable. Please try again.');
       verified = await result.json();
     } catch { fail(503, 'Verification is unavailable. Please try again.'); }
-    if (!verified.success || verified.hostname !== env.TURNSTILE_HOSTNAME || verified.action !== 'inquiry') fail(400, 'Verification expired or failed. Please try again.');
+    if (!verified.success || (!allowed(env.TURNSTILE_HOSTNAME, verified.hostname) || verified.hostname !== new URL(origin).hostname) || verified.action !== 'inquiry') fail(400, 'Verification expired or failed. Please try again.');
     const id = crypto.randomUUID(); const now = new Date().toISOString();
     await env.DB.prepare('INSERT INTO inquiries (id,request_id,fingerprint,name,email,budget,message,status,created_at,updated_at) VALUES (?,?,?,?,?,?,?,\'new\',?,?) ON CONFLICT(request_id) DO NOTHING')
       .bind(id,data.requestId,fingerprint,name,email,budget,message,now,now).run();
@@ -114,7 +115,7 @@ export default {
   async fetch(request, env) {
     const origin=request.headers.get('origin');
     const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','Vary':'Origin'};
-    if(origin===env.ALLOWED_ORIGIN){headers['Access-Control-Allow-Origin']=origin;headers['Access-Control-Allow-Methods']='GET, POST, PATCH, DELETE, OPTIONS';headers['Access-Control-Allow-Headers']='Content-Type, Authorization';}
+    if(allowed(env.ALLOWED_ORIGIN, origin)){headers['Access-Control-Allow-Origin']=origin;headers['Access-Control-Allow-Methods']='GET, POST, PATCH, DELETE, OPTIONS';headers['Access-Control-Allow-Headers']='Content-Type, Authorization';}
     try {const result=await route(request,env);return new Response(result.status===204?null:JSON.stringify(result.data),{status:result.status||200,headers});}
     catch(error){const status=error instanceof ApiError?error.status:503;if(status===429)headers['Retry-After']='60';return new Response(JSON.stringify({error:status===503?'Service is unavailable. Please try again or use email.':error.message}),{status,headers});}
   }

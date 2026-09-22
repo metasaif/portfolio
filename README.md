@@ -1,3 +1,9 @@
+# Portfolio hosting
+
+Live site: https://mohammadsaifkhan.pages.dev/
+
+Cloudflare Pages automatically deploys the `first` branch from this GitHub repository. Its build command is `node build-pages.mjs` and output directory is `dist`. The build copies only public website assets. GitHub Pages remains available as an alternative address.
+
 # Your portfolio: edit, commit, publish
 
 ## Project inquiries and private dashboard
@@ -78,7 +84,7 @@ Keep assets/js/main.js: it is the browser interaction code, not a build script. 
 
 ## Website address and deployment
 
-SEO URLs and missing-page navigation are configured for https://metasaif.github.io/portfolio/. Settings → Pages should use the branch containing your corrected files and the root folder. No deployment was performed by preparing this package.
+SEO URLs and missing-page navigation are configured for https://mohammadsaifkhan.pages.dev/. Settings → Pages should use the branch containing your corrected files and the root folder. No deployment was performed by preparing this package.
 
 If you switch domains, replace the old URL in each HTML page, robots.txt and sitemap.xml. The base URL in 404.html must also match. The regular page paths remain relative for GitHub Pages project hosting.
 

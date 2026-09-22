@@ -5,8 +5,8 @@
   "compatibility_date": "2026-09-20",
   "workers_dev": true,
   "vars": {
-    "ALLOWED_ORIGIN": "https://metasaif.github.io",
-    "TURNSTILE_HOSTNAME": "metasaif.github.io"
+    "ALLOWED_ORIGIN": "https://metasaif.github.io,https://mohammadsaifkhan.pages.dev",
+    "TURNSTILE_HOSTNAME": "metasaif.github.io,mohammadsaifkhan.pages.dev"
   },
   "d1_databases": [{
     "binding": "DB",

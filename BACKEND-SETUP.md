@@ -4,14 +4,14 @@
 
 The backend has been created in your Cloudflare account. API: `https://saif-portfolio-api.mohammadsaifkhan.workers.dev`. The database, rate limits, Turnstile widget and private Worker secrets are configured. The public frontend settings are filled in. You do not need to repeat the setup below; it is retained for recovery or deploying another copy.
 
-Your private dashboard access key was saved locally as `portfolio-private-admin-access.txt` outside the site folder and was not committed to GitHub. Store it in your password manager. Open `https://metasaif.github.io/portfolio/admin.html` to sign in.
+Your private dashboard access key was saved locally as `portfolio-private-admin-access.txt` outside the site folder and was not committed to GitHub. Store it in your password manager. Open `https://mohammadsaifkhan.pages.dev/admin.html` to sign in.
 
 The frontend runs on GitHub Pages and the backend code in `backend/` runs on Cloudflare. If the backend is unavailable, visitors can use your existing email and WhatsApp links.
 
 ## What you get
 
 - A project inquiry form with validation, consent, a honeypot, Cloudflare Turnstile and request rate limits.
-- A private dashboard at `https://metasaif.github.io/portfolio/admin.html` to read inquiries, filter them, change their status, open a reply in your email app, and delete them.
+- A private dashboard at `https://mohammadsaifkhan.pages.dev/admin.html` to read inquiries, filter them, change their status, open a reply in your email app, and delete them.
 - Cloudflare D1 stores inquiries. It does not store your admin key or raw IP addresses. Turnstile receives an IP for verification; Cloudflare may process request metadata under its privacy policy.
 - No email notification service is included. Check the dashboard for new inquiries. Saving an inquiry is not the same as sending an email.
 - Free-tier operation is subject to Cloudflare quotas. Stay on the Free plan; do not enable paid features solely for this project.
