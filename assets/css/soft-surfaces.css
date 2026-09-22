@@ -1,0 +1,50 @@
+/* Soft sculpted surfaces: shared by the portfolio, case studies and inquiry desk. */
+:root{--radius-control:18px;--radius-card:30px;--soft-shadow:0 14px 36px #283d8010,0 3px 8px #283d8008;--raised-shadow:7px 7px 18px #cdd2e780,-7px -7px 18px #ffffffd9}
+body{background:radial-gradient(ellipse at 5% 0%,#e9eaff 0,transparent 42%),#f5f5ff}
+button,a,input,select,textarea,summary{transition:background-color .2s,box-shadow .2s,transform .2s,border-color .2s}
+.nav-contact,.hero-copy .text-link,.admin-button,.inquiry-panel button,.view-project,.skip{border-radius:999px}
+.site-header .nav-contact{padding:12px 22px;background:#eef0ff;box-shadow:var(--raised-shadow);border:1px solid #ffffff}
+.hero{border-radius:0 0 48px 48px;background:radial-gradient(ellipse at 90% 5%,#4f6cff,transparent 55%),var(--electric)}
+.hero-copy .text-link{box-shadow:0 7px 20px #08288b45,inset 0 1px 1px #ffffffb3;padding:16px 26px}
+.hero-copy .text-link:hover{transform:translateY(-2px);box-shadow:0 11px 26px #08288b55,inset 0 1px 1px #ffffffb3}
+.bench,.project-visual,.system-map,.lab-experiment,.profile-monogram,.case-preview,.concept-ui{border-radius:var(--radius-card);overflow:hidden}
+.bench{box-shadow:0 18px 36px #08288b45,inset 0 1px 0 #fff;transform:rotate(1deg)}
+.bench-flow i,.app-window,.kanban article,.metric-row>div,.index-preview{border-radius:14px}
+.project.mint .project-visual,.project.lavender .project-visual{box-shadow:0 16px 34px #283d801c,inset 0 1px 0 #ffffffb3;border-color:#ffffff80}
+.project-visual{transition:transform .25s,box-shadow .25s}.project-visual:hover{transform:translateY(-4px)}
+.index-row{border:1px solid #fff!important;margin:14px 0;padding:26px;min-height:106px;border-radius:24px;background:#f1f3ff;box-shadow:var(--soft-shadow)}
+.capabilities,.matrix,.deep-dive,.lab,.contact{border-radius:42px;margin:12px clamp(10px,1.5vw,26px)}
+.system-map{box-shadow:var(--soft-shadow);transform:none;border-color:#fff}
+.system-step:last-of-type{border-radius:16px;border-top:0}
+.stage-node{box-shadow:inset 2px 2px 6px #11173566,inset -2px -2px 6px #59639144}
+.matrix-stages details[open] .stage-node{box-shadow:0 8px 22px #0a112e55,inset 0 2px 2px #ffffffb3}
+.lab-experiment{box-shadow:0 18px 40px #5131931a,inset 0 1px 0 #fff;border-color:#ffffffa6}
+.lab-controls label{border-radius:16px;box-shadow:0 4px 12px #5131930d}.lab-sample>b{border-radius:24px;box-shadow:0 12px 24px #51319333}
+.profile-monogram{box-shadow:0 14px 34px #1649ef20,inset 0 1px 0 #ffffffb3;border-color:#eaffb3;transform:rotate(-1deg)}
+.stack-table>div{border-radius:16px}.pill{border-radius:999px}
+.contact{background:radial-gradient(ellipse at 100% 0%,#ffbaa2,transparent 60%),#ff947e}
+.contact-links>a,.pending-contact{border:1px solid #ffffff66;border-radius:20px;padding:18px 22px;background:#ffffff30;box-shadow:0 7px 18px #8f3b2c0d}
+.contact-links{gap:12px}.project-pagination{border-radius:28px}.case-aside{border-radius:22px}
+.inquiry-panel{border-top:1px solid #9b51484d;gap:36px}
+.inquiry-panel form{background:#fff5ee70;padding:26px;border:1px solid #fff9;border-radius:28px;box-shadow:0 18px 40px #8b392a10}
+.inquiry-panel input:not([type=checkbox]),.inquiry-panel select,.inquiry-panel textarea,.admin-login input,.admin-filter,.inquiry-card select{border-radius:var(--radius-control);border:1px solid #d5daea;background:#f7f8ff;box-shadow:inset 3px 3px 7px #d5daea66,inset -3px -3px 7px #ffffff;min-height:50px;padding:13px 17px}
+.inquiry-panel input:not([type=checkbox]),.inquiry-panel select,.inquiry-panel textarea{background:#fffaf6;border-color:#e5b7a9;box-shadow:inset 2px 2px 5px #d7ada32b,inset -2px -2px 5px #fff}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #1649ef;outline-offset:3px}
+.inquiry-panel button,.admin-button{background:linear-gradient(145deg,#355fff,#1649ef);box-shadow:0 7px 16px #1649ef29,inset 0 1px 0 #ffffff66;border:1px solid #1649ef20;padding:14px 24px}
+.admin-button.secondary{background:linear-gradient(145deg,#f9faff,#e8ecfc);box-shadow:var(--raised-shadow);border-color:#fff;color:#293b79}
+.admin-button.danger{background:linear-gradient(145deg,#fff3f5,#ffe0e7);color:#922b48;box-shadow:0 5px 14px #a5365412;border-color:#f4bbc9}
+.admin-button:not(:disabled):hover,.inquiry-panel button:not(:disabled):hover{transform:translateY(-2px);filter:brightness(1.03)}
+.admin-button:not(:disabled):active,.inquiry-panel button:not(:disabled):active{transform:translateY(1px);box-shadow:inset 2px 3px 7px #14285026}
+.admin-page{max-width:1240px;padding-top:32px;padding-bottom:72px}
+.admin-top{border-bottom:1px solid #d5daea;padding-bottom:26px}.admin-top .admin-link{padding:10px 17px;background:#ffffffa6;border:1px solid #fff;border-radius:999px;text-decoration:none;box-shadow:0 4px 12px #283d800a}
+.admin-page h1{margin-top:46px}.admin-page>p:not(.admin-notice){color:#535b77}
+.admin-notice{border:1px solid #fff;border-left:1px solid #fff;border-radius:20px;background:linear-gradient(120deg,#e6ecff,#eeebff);padding:18px 24px;box-shadow:var(--soft-shadow);color:#293b79}
+.admin-toolbar{padding:18px 20px;border:1px solid #fff;border-radius:26px;background:#eeeffa;gap:16px;box-shadow:var(--soft-shadow);margin:28px 0}
+.admin-toolbar label{font-size:14px;color:#535b77}.admin-toolbar #logout{margin-left:auto}
+.inquiry-card{position:relative;border:1px solid #fff;border-top:1px solid #fff;border-radius:28px;background:linear-gradient(135deg,#fff,#fafaff);padding:30px;box-shadow:0 16px 40px #293b7910;margin-top:20px;overflow:hidden}
+.inquiry-card::before{content:'';position:absolute;left:30px;top:0;width:68px;height:4px;border-radius:0 0 6px 6px;background:#4868ff}
+.inquiry-card h2{font-size:27px;margin-bottom:6px}.inquiry-card .inquiry-meta{color:#64708a}.inquiry-actions{padding-top:22px;border-top:1px solid #e6e9f3;margin-top:26px;gap:14px}.inquiry-actions>label{font-size:14px;color:#535b77}
+.admin-login{max-width:570px;padding:30px;background:#f0f2fc;border:1px solid #fff;border-radius:28px;box-shadow:var(--raised-shadow);margin-top:28px}.admin-login button{margin-top:20px}
+@media(max-width:700px){.hero{border-radius:0 0 30px 30px}.site-header .nav-contact{padding:9px 15px;min-height:44px}.capabilities,.matrix,.deep-dive,.lab,.contact{border-radius:28px;margin:10px}.bench,.system-map,.profile-monogram,.project-visual,.lab-experiment{border-radius:24px}.index-row{padding:20px 14px;gap:12px}.contact-links>a,.pending-contact{padding:15px}.inquiry-panel form{padding:18px;border-radius:24px}.admin-top{gap:12px;flex-wrap:wrap}.admin-top .eyebrow{order:3;width:100%}.admin-page{padding:24px 18px 48px}.admin-page h1{margin-top:32px}.admin-toolbar{padding:16px;gap:12px}.admin-toolbar #logout{margin-left:0}.admin-toolbar label{width:auto}.admin-filter{flex:1}.inquiry-card{padding:24px 20px}.inquiry-actions .admin-button{flex:1;white-space:nowrap}.admin-login{padding:22px}.admin-notice{padding:16px 18px}}
+@media(prefers-reduced-motion:reduce){button,a,input,select,textarea,summary,.project-visual{transition:none!important}.admin-button:hover,.inquiry-panel button:hover,.project-visual:hover{transform:none!important}}
+@media(max-width:420px){.inquiry-actions select{flex:1 1 100%;width:100%}.inquiry-actions .admin-button{padding:14px 18px}.admin-toolbar .admin-filter{flex-basis:75%}}
