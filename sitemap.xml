@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mohammadsaifkhan.pages.dev/</loc></url>
-  <url><loc>https://mohammadsaifkhan.pages.dev/projects/cliniaro.html</loc></url>
-  <url><loc>https://mohammadsaifkhan.pages.dev/projects/webdivi.html</loc></url>
-  <url><loc>https://mohammadsaifkhan.pages.dev/projects/wfh-connect.html</loc></url>
-  <url><loc>https://mohammadsaifkhan.pages.dev/projects/whatscrm.html</loc></url>
+  <url><loc>https://mohammadsaifkhan.pages.dev/projects/cliniaro</loc></url>
+  <url><loc>https://mohammadsaifkhan.pages.dev/projects/whatscrm</loc></url>
+  <url><loc>https://mohammadsaifkhan.pages.dev/projects/wfh-connect</loc></url>
+  <url><loc>https://mohammadsaifkhan.pages.dev/projects/webdivi</loc></url>
+  <url><loc>https://mohammadsaifkhan.pages.dev/notes/portfolio-inquiry-backend</loc></url>
 </urlset>
