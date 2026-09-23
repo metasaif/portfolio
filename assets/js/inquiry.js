@@ -19,7 +19,7 @@ async function initialize(){
    const script=document.createElement('script');script.async=true;script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onInquiryVerificationReady';
    script.onerror=()=>{clearTimeout(timeout);reject(Error('Verification could not load. Please reload or use email.'));};document.head.append(script);
   });
-   widget=window.turnstile.render('#inquiry-verification',{sitekey:TURNSTILE_SITE_KEY,action:'inquiry',theme:'light',size:'flexible',callback:value=>{token=value;button.disabled=false;},'expired-callback':resetChallenge,'error-callback':()=>{token='';button.disabled=true;message('Verification could not load. Please use email or reload.');}});
+   widget=window.turnstile.render('#inquiry-verification',{sitekey:TURNSTILE_SITE_KEY,action:'inquiry',theme:'light',size:'flexible',callback:value=>{token=value;button.disabled=false;message('Verification complete. Your inquiry is ready to send.');},'expired-callback':resetChallenge,'error-callback':()=>{token='';button.disabled=true;message('Verification could not load. Please use email or reload.');}});
    fields.disabled=false;message('Tell me about your project. All fields marked * are required.');
  }catch(error){console.error('Inquiry initialization failed:',error);message(error.message||'The inquiry form is unavailable. Please use the email or WhatsApp link above.');}
 }
@@ -32,4 +32,20 @@ form.addEventListener('submit',async event=>{
  catch(error){message(error.name==='TimeoutError'?'No confirmation received. Please retry; the same inquiry will not be duplicated.':error.message||'Unable to send. Please use email.');}
  finally{fields.disabled=false;resetChallenge();}
 });
-initialize();
+// Load verification only when a visitor starts using the form. This applies to
+// everyone; there is no crawler detection or verification bypass.
+if(configured){
+ fields.disabled=false;
+ button.disabled=true;
+ message('Tell me about your project. Spam verification starts when you use the form.');
+ let started=false;
+ const start=()=>{
+  if(started)return;
+  started=true;
+  form.removeEventListener('focusin',start);
+  form.removeEventListener('pointerdown',start);
+  initialize();
+ };
+ form.addEventListener('focusin',start);
+ form.addEventListener('pointerdown',start);
+}
